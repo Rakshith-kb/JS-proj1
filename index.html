@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./styles/style.css" type="text/css"> -->
+    <title>Change the background color</title>
+
+    <style>
+        #myBtn {
+            position: absolute;
+            top: 420px;
+            left: 50%;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+        } 
+    </style>
+</head>
+<body>
+    <div id="root">
+        <button id = "myBtn">Click Me!</button>
+    </div>
+    <!-- <script src="./js/myscript.js"></script> -->
+    <script>
+        const rootHandle = document.getElementById('root');
+        const bodyTag = document.querySelector('body');
+        const colors = ['#0000FF', '#FFC0CB', '#008000', '#FF0000', '#FFFF00', '#800080']
+        const btnTag = document.getElementById('myBtn')
+        btnTag.addEventListener('click', function() {
+            const rand = Math.round(Math.random() * (colors.length - 1))
+            bodyTag.style.backgroundColor = colors[rand];
+        })
+    </script>
+</body>
+</html>
